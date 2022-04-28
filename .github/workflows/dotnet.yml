@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-restore --verbosity normal
     - name: Ckeck
       run: ls -l UltimateApp/bin/Release/netcoreapp3.0/
     - name: Create Release
