@@ -22,7 +22,7 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Ckeck
-      run: ls -l
+      run: ls -l UltimateApp/bin/Release/netcoreapp3.0/
     - name: Create Release
       uses: ncipollo/release-action@v1.10.0
       with:
