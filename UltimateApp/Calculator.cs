@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UltimateApp
 {
-    enum Operation
+    public enum Operation
     {
         Add,
         Subtract,
@@ -13,7 +13,7 @@ namespace UltimateApp
         Modulo
     }
 
-    class Calculator
+    public class Calculator
     {
         private static int Add (int a, int b)
         {
