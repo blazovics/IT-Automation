@@ -16,7 +16,6 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      working-directory: ./UltimateApp
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
@@ -25,7 +24,7 @@ jobs:
     - name: Ckeck
       run: ls -l UltimateApp/bin/Release/netcoreapp3.0/
     - name: Create Release
-      uses: ncipollo/release-action@v1.10.0
+      uses: ncipollo/release-action@v1
       with:
         tag: "1.0"
         body: New Release
