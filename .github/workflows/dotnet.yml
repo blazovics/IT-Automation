@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
+    branches: [ dev ]
 
 jobs:
   build:
@@ -21,6 +21,13 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Publish Test
+      uses: dorny/test-reporter@v1
+      if: always()
+      with:
+        name: Test Results on dev
+        path: ./UltimateApp/TestResults/*.trx
+        reporter: dotnet-trx
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
