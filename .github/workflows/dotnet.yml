@@ -20,6 +20,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      working-directory: ./UltimateApp
       run: dotnet test --no-restore --verbosity normal --logger trx --results-directory "TestResults"
     - name: Publish Test
       uses: dorny/test-reporter@v1
