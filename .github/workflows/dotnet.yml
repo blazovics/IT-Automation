@@ -42,10 +42,9 @@ jobs:
         name: codecov-umbrella # optional
         fail_ci_if_error: true # optional (default = false)
         verbose: true # optional (default = false)
-    - name: Create Release
-      uses: ncipollo/release-action@v1
+    - name: Pull request
+      uses: repo-sync/pull-request@v2
       with:
-        tag: 1.1.${{github.run_number}}
-        body: New Release
-        token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "./UltimateApp/bin/Release/netcoreapp3.0/UltimateApp" 
+        destination_branch: "main"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
