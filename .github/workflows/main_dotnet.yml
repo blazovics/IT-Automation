@@ -27,4 +27,4 @@ jobs:
         tag: 1.1.${{github.run_number}}
         body: New Release
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: "./UltimateApp/bin/Release/netcoreapp3.0/UltimateApp" 
+        artifacts: "./UltimateApp/bin/Release/netcoreapp3.1/UltimateApp" 
